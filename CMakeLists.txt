@@ -10,6 +10,8 @@ set(APP_TARGET micro_ros_mbed)
 include(${MBED_PATH}/tools/cmake/app.cmake)
 
 add_subdirectory(${MBED_PATH})
+add_subdirectory(drivers/DebounceIn)
+add_subdirectory(drivers/wifi-ism43362)
 
 add_executable(${APP_TARGET})
 
@@ -41,7 +43,8 @@ project(${APP_TARGET})
 target_sources(${APP_TARGET}
     PRIVATE
         main.cpp
-        transports.cpp
+        transports/transport_udp.cpp
+        transports/transport_serial.cpp
 )
 
 add_dependencies(${APP_TARGET} libmicroros_project)
@@ -64,6 +67,10 @@ endforeach()
 target_link_libraries(${APP_TARGET}
     PRIVATE
         mbed-os
+        mbed-events
+        mbed-netsocket
+        wifi-ism43362
+        DebounceIn
         ${CMAKE_CURRENT_SOURCE_DIR}/libmicroros.a
 )
 
