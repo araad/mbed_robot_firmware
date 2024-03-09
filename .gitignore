@@ -13,3 +13,6 @@ libmicroros.a
 micro_ros_dev
 micro_ros_src
 mbed_toolchain.cmake
+
+drivers/
+.vscode/c_cpp_properties.json

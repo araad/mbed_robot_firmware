@@ -1,5 +1,36 @@
 {
+    "config": {
+        "log-level": "DEBUG",
+        "freemem-cell": 100,
+        "max-thread-info": 10,
+        "max-thread-stats": 18,
+        "uros-agent-transport": "UROS_TRANSPORT_UDP",
+        "uros-agent-host": "\"10.0.0.143\"",
+        "uros-agent-port": 8080,
+        "motors-ros-topic-path": "\"/megapi/motors\""
+    },
     "macros": [
-        "MBED_CONF_APP_MAIN_STACK_SIZE=20000"
-    ]
+        "MBED_CONF_APP_MAIN_STACK_SIZE=10000" 
+    ],
+    "target_overrides": {
+        "*": {
+            "mbed-trace.enable": true,
+            "mbed-trace.max-level": "TRACE_LEVEL_INFO",
+            "platform.stdio-convert-newlines": true,
+            "platform.stdio-baud-rate": 115200,
+            "platform.default-serial-baud-rate": 115200,
+            "platform.callback-nontrivial": 1,
+            "platform.error-filename-capture-enabled": true,
+            "platform.heap-stats-enabled": true,
+            "platform.stack-stats-enabled": true,
+            "platform.thread-stats-enabled": true
+        },
+        "DISCO_L475VG_IOT01A": {
+            "ism43362.wifi-debug": false,
+            "target.network-default-interface-type": "WIFI",
+            "nsapi.default-wifi-security": "WPA_WPA2",
+            "nsapi.default-wifi-ssid": "\"SSID\"",
+            "nsapi.default-wifi-password": "\"PASSWORD\""
+        }
+    }
 }
