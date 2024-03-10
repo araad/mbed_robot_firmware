@@ -5,7 +5,7 @@
         "max-thread-info": 10,
         "max-thread-stats": 18,
         "uros-agent-transport": "UROS_TRANSPORT_UDP",
-        "uros-agent-host": "\"10.0.0.143\"",
+        "uros-agent-host": "\"localhost\"",
         "uros-agent-port": 8080,
         "motors-ros-topic-path": "\"/megapi/motors\""
     },

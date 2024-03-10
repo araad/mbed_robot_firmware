@@ -14,5 +14,6 @@ micro_ros_dev
 micro_ros_src
 mbed_toolchain.cmake
 
-drivers/
+./drivers/
+!./drivers/*.lib
 .vscode/c_cpp_properties.json
